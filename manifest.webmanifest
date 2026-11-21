@@ -1,13 +1,13 @@
 {
   "name": "VET 360° — Veterinary Learning",
   "short_name": "VET 360°",
-  "description": "คลังความรู้สำหรับการเรียนเทคนิคการสัตวแพทย์",
+  "description": "คลังความรู้สำหรับการเรียนสัตวแพทย์",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#f5f7f5",
-  "theme_color": "#174b3d",
+  "background_color": "#fdfbf7",
+  "theme_color": "#3c9d82",
   "icons": [
     {
       "src": "assets/icon-192.png",
