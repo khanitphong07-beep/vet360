@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#174b3d">
+  <meta name="description" content="VET 360° คลังความรู้สำหรับการเรียนเทคนิคการสัตวแพทย์">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>VET 360°</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="VET 360 หน้าหลัก">
+        <span class="brand-mark">✚</span>
+        <span><strong>VET <i>360°</i></strong><small>VETERINARY LEARNING</small></span>
+      </a>
+      <button class="icon-btn" id="installBtn" hidden title="ติดตั้งแอป">⇩</button>
+    </header>
+    <main id="app" tabindex="-1"></main>
+    <nav class="bottom-nav" aria-label="เมนูหลัก">
+      <a href="#home" data-nav="home"><span>⌂</span>หน้าหลัก</a>
+      <a href="#library" data-nav="library"><span>▤</span>คลังความรู้</a>
+      <a href="#search" data-nav="search"><span>⌕</span>ค้นหา</a>
+      <a href="#quiz" data-nav="quiz"><span>✎</span>ทดสอบ</a>
+      <a href="#saved" data-nav="saved"><span>♡</span>บันทึก</a>
+    </nav>
+    <footer>VET 360° · เพื่อการศึกษา ไม่ใช้แทนคำสั่งรักษาจากสัตวแพทย์</footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
