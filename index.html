@@ -1,36 +1,47 @@
 <!doctype html>
 <html lang="th">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#3c9d82">
-  <meta name="description" content="VET 360° คลังความรู้สำหรับการเรียนเทคนิคการสัตวแพทย์">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/icon-192.png">
-  <link rel="stylesheet" href="styles.css">
-  <title>VET 360°</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5a8c7"><meta name="description" content="VET 360° ห้องเรียนเทคนิคการสัตวแพทย์">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon.svg">
+<link rel="stylesheet" href="styles.css"><title>VET 360° | Veterinary Learning</title>
 </head>
 <body>
-  <div class="app-shell">
-    <header class="topbar">
-      <a class="brand" href="#home" aria-label="VET 360 หน้าหลัก">
-        <span class="brand-mark">✚</span>
-        <span><strong>VET <i>360°</i></strong><small>VETERINARY LEARNING</small></span>
-      </a>
-      <button class="icon-btn" id="installBtn" hidden title="ติดตั้งแอป">⇩</button>
-    </header>
-    <main id="app" tabindex="-1"></main>
-    <nav class="bottom-nav" aria-label="เมนูหลัก">
-      <a href="#home" data-nav="home"><span>⌂</span><small>หน้าหลัก</small></a>
-      <a href="#library" data-nav="library"><span>▤</span><small>คลังความรู้</small></a>
-      <a href="#search" data-nav="search"><span>⌕</span><small>ค้นหา</small></a>
-      <a href="#quiz" data-nav="quiz"><span>✎</span><small>ทดสอบ</small></a>
-      <a href="#saved" data-nav="saved"><span>♡</span><small>บันทึก</small></a>
-    </nav>
-    <footer>VET 360° · เพื่อการศึกษา ไม่ใช้แทนคำสั่งรักษาจากสัตวแพทย์</footer>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-icon">✚</span><span><b>VET 360°</b><small>Veterinary Learning Hub</small></span></a>
+  <nav><button data-view="home" class="nav active">หน้าหลัก</button><button data-view="library" class="nav">บทเรียน</button><button data-view="tools" class="nav">คลังความรู้</button><button data-view="quiz" class="nav">แบบทดสอบ</button></nav>
+  <button id="profileBtn" class="profile">เข้าสู่ระบบ</button>
+</header>
+<main>
+<section id="home" class="view active">
+  <div class="hero">
+    <div><span class="eyebrow">LEARN • PRACTICE • CARE</span><h1>เรียนรู้การดูแลสัตว์<br><em>รอบด้านในที่เดียว</em></h1><p>คลังความรู้เทคนิคการสัตวแพทย์ ตั้งแต่กายวิภาค ห้องปฏิบัติการ อุปกรณ์ ไปจนถึงการดูแลผู้ป่วย</p><button class="primary" data-goto="library">เริ่มเรียนรู้ <span>→</span></button></div>
+    <div class="hero-art"><div class="orbit orbit1"></div><div class="orbit orbit2"></div><div class="pet">🐶</div><span class="float f1">🩺</span><span class="float f2">🐾</span><span class="float f3">💗</span></div>
   </div>
-  <script src="data.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+  <div class="section-head"><div><span class="eyebrow">YOUR LEARNING SPACE</span><h2>เลือกเส้นทางการเรียน</h2></div><span class="muted">อัปเดตความรู้ได้ทุกวัน</span></div>
+  <div class="category-grid" id="homeCategories"></div>
+  <div class="dashboard">
+    <div><span class="eyebrow">MY PROGRESS</span><h2>ความก้าวหน้าของฉัน</h2><p class="muted">ความคืบหน้าถูกบันทึกไว้บนอุปกรณ์นี้</p><div class="progress-track"><div id="progressBar"></div></div><b id="progressText">0% · เรียนแล้ว 0 บท</b></div>
+    <div class="dash-icon">📚</div>
+  </div>
+</section>
+<section id="library" class="view">
+ <div class="page-heading"><span class="eyebrow">LEARNING LIBRARY</span><h1>คลังบทเรียน</h1><p>เลือกหัวข้อที่สนใจ อ่านสรุป และทำเครื่องหมายว่าเรียนแล้ว</p></div>
+ <div class="filters"><input id="search" placeholder="ค้นหาบทเรียน เช่น CBC, เย็บแผล, กายวิภาค…"><select id="categoryFilter"><option value="all">ทุกหมวดหมู่</option></select></div>
+ <div id="lessonGrid" class="lesson-grid"></div>
+</section>
+<section id="lesson" class="view"><button class="back" data-goto="library">← กลับไปบทเรียน</button><article id="lessonContent" class="lesson-paper"></article></section>
+<section id="tools" class="view">
+ <div class="page-heading"><span class="eyebrow">QUICK REFERENCE</span><h1>คลังความรู้สัตวแพทย์</h1><p>คำศัพท์ ตัวย่อ อุปกรณ์ และหลักการตรวจทางห้องปฏิบัติการ</p></div>
+ <div class="tool-tabs"><button class="tab active" data-tab="abbrev">ตัวย่อที่พบบ่อย</button><button class="tab" data-tab="equipment">อุปกรณ์</button><button class="tab" data-tab="lab">แล็บเบื้องต้น</button><button class="tab" data-tab="safety">ความปลอดภัย</button></div>
+ <div id="toolContent" class="reference-grid"></div>
+</section>
+<section id="quiz" class="view">
+ <div class="page-heading"><span class="eyebrow">CHECK YOUR KNOWLEDGE</span><h1>ทดสอบความเข้าใจ</h1><p>แบบทดสอบพื้นฐานพร้อมเฉลยและคำอธิบาย</p></div>
+ <div id="quizBox" class="quiz-box"></div>
+</section>
+</main>
+<footer><b>VET 360°</b><span>แหล่งเรียนรู้เพื่อการศึกษา · ไม่ใช้แทนคำวินิจฉัยหรือคำสั่งรักษาจากสัตวแพทย์</span></footer>
+<div id="modal" class="modal"><div class="modal-card"><button class="close" id="closeModal">×</button><div id="modalBody"></div></div></div>
+<script src="data.js"></script><script src="app.js"></script>
+</body></html>
